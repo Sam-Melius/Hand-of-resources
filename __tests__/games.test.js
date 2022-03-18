@@ -38,4 +38,11 @@ describe('Hand-of-resources routes', () => {
     expect(res.body).toEqual(expected);
   });
 
+  it('deletes a game by id', async () => {
+    const expected = await Game.findById(1);
+    const res = await request(app).delete(`/api/v1/games/${expected.id}`);
+
+    expect(res.body).toEqual(expected);
+  });
+
 });
