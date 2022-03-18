@@ -44,4 +44,18 @@ describe('Hand-of-resources routes', () => {
     expect(res.body).toEqual(expected);
   });
 
+  it('updates a cat by id', async () => {
+    const expected = {
+      id: expect.any(String),
+      name: 'Scruff',
+      age: 6,
+      food: 'Tuna'
+    };
+    const res = await request(app)
+      .patch('/api/v1/cats/1')
+      .send({ age: 6 });
+
+    expect(res.body).toEqual(expected);
+  });
+
 });
