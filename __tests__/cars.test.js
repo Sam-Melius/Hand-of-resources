@@ -24,11 +24,11 @@ describe('Hand-of-resources routes', () => {
     expect(res.body).toEqual({ id: expect.any(String), ...expected });
   });
 
-  //   it('creates a list', async () => {
-  //     const expected = await Car.findAll();
-  //     const res = await request(app).get('/api/v1/cars');
+  it('creates a list', async () => {
+    const expected = await Car.findAll();
+    const res = await request(app).get('/api/v1/cars');
 
-  //     expect(res.body).toEqual(expected);
-  //   });
+    expect(res.body).toEqual(expected);
+  });
 
 });
