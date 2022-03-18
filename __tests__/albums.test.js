@@ -45,4 +45,18 @@ describe('Hand-of-resources routes', () => {
     expect(res.body).toEqual(expected);
   });
 
+  it('updates an album by id', async () => {
+    const expected = {
+      id: expect.any(String),
+      name: 'American Idiot',
+      band: 'Green Day',
+      tracks: 12
+    };
+    const res = await request(app)
+      .patch('/api/v1/albums/1')
+      .send({ tracks: 12 });
+
+    expect(res.body).toEqual(expected);
+  });
+
 });
