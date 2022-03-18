@@ -45,4 +45,18 @@ describe('Hand-of-resources routes', () => {
     expect(res.body).toEqual(expected);
   });
 
+  it('updates a game by id', async () => {
+    const expected = {
+      id: expect.any(String),
+      name: 'Elden Ring',
+      console: 'All',
+      players: 1
+    };
+    const res = await request(app)
+      .patch('/api/v1/games/1')
+      .send({ console: 'All' });
+
+    expect(res.body).toEqual(expected);
+  });
+
 });
