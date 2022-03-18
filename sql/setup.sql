@@ -4,6 +4,8 @@
 DROP TABLE IF EXISTS cats;
 DROP TABLE IF EXISTS albums;
 DROP TABLE IF EXISTS games;
+DROP TABLE IF EXISTS cars;
+
 
 CREATE TABLE cats (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -26,6 +28,13 @@ CREATE TABLE games (
     players INT
 );
 
+CREATE TABLE cars (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name TEXT NOT NULL,
+    color TEXT,
+    year INT
+);
+
 
 
 INSERT INTO
@@ -44,4 +53,11 @@ INSERT INTO
     games (name, console, players)
 VALUES
     ('Elden Ring', 'Playstaion', 1),
-    ('Mario Kart', 'Nintendo', 4)
+    ('Mario Kart', 'Nintendo', 4);
+
+INSERT INTO
+    cars (name, color, year)
+VALUES
+    ('Accord', 'Green', 1999),
+    ('Chevelle', 'Black', 1969)
+
