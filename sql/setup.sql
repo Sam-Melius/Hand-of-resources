@@ -3,6 +3,7 @@
 
 DROP TABLE IF EXISTS cats;
 DROP TABLE IF EXISTS albums;
+DROP TABLE IF EXISTS games;
 
 CREATE TABLE cats (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -18,6 +19,15 @@ CREATE TABLE albums (
     tracks INT
 );
 
+CREATE TABLE games (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name TEXT NOT NULL,
+    console TEXT,
+    players INT
+);
+
+
+
 INSERT INTO
     cats (name, age, food)
 VALUES
@@ -28,4 +38,10 @@ INSERT INTO
     albums (name, band, tracks)
 VALUES
     ('American Idiot', 'Green Day', 13),
-    ('Typhoons', 'Royal Blood', 11)
+    ('Typhoons', 'Royal Blood', 11);
+
+INSERT INTO
+    games (name, console, players)
+VALUES
+    ('Elden Ring', 'Playstaion', 1),
+    ('Mario Kart', 'Nintendo', 4)
