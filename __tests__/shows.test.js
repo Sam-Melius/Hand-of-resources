@@ -37,5 +37,12 @@ describe('Hand-of-resources routes', () => {
       
     expect(res.body).toEqual(expected);
   });
+
+  it('deletes an album by id', async () => {
+    const expected = await Show.findById(1);
+    const res = await request(app).delete(`/api/v1/shows/${expected.id}`);
+
+    expect(res.body).toEqual(expected);
+  });
   
 });
