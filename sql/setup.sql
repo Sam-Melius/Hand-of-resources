@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS cats;
 DROP TABLE IF EXISTS albums;
 DROP TABLE IF EXISTS games;
 DROP TABLE IF EXISTS cars;
+DROP TABLE IF EXISTS shows;
 
 
 CREATE TABLE cats (
@@ -35,6 +36,12 @@ CREATE TABLE cars (
     year INT
 );
 
+CREATE TABLE shows (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    title TEXT NOT NULL,
+    seasons INT,
+    episodes INT
+);
 
 
 INSERT INTO
@@ -59,5 +66,11 @@ INSERT INTO
     cars (name, color, year)
 VALUES
     ('Accord', 'Green', 1999),
-    ('Chevelle', 'Black', 1969)
+    ('Chevelle', 'Black', 1969);
+
+INSERT INTO
+    shows (title, seasons, episodes)
+VALUES
+    ('Peaky Blinders', 6, 33),
+    ('That 70s Show', 8, 200);
 
