@@ -23,5 +23,12 @@ describe('Hand-of-resources routes', () => {
 
     expect(res.body).toEqual({ id: expect.any(String), ...expected });
   });
+
+  it('creates a list', async () => {
+    const expected = await Show.findAll();
+    const res = await request(app).get('/api/v1/shows');
+
+    expect(res.body).toEqual(expected);
+  });
   
 });
